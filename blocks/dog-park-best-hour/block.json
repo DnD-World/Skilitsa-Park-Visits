@@ -1,0 +1,23 @@
+{
+    "apiVersion": 2,
+    "name": "dog-park/best-hour",
+    "title": "Dog Park Best Hour",
+    "category": "widgets",
+    "description": "Displays the best hour to visit a dog park based on weather.",
+    "textdomain": "dogpark",
+    "attributes": {
+        "parkId": {
+            "type": "number",
+            "default": 0
+        },
+        "isDarkMode": {
+            "type": "boolean",
+            "default": false
+        }
+    },
+    "supports": {
+        "html": false,
+        "multiple": false
+    },
+    "editorScript": "file:./index.js"
+}

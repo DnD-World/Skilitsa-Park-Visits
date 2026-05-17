@@ -1,0 +1,23 @@
+{
+  "name": "dog-park-recommendations",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DnD-World/dog-park-recommendations.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DnD-World/dog-park-recommendations/issues"
+  },
+  "homepage": "https://github.com/DnD-World/dog-park-recommendations#readme",
+  "devDependencies": {
+    "@wordpress/scripts": "^32.2.0"
+  }
+}
