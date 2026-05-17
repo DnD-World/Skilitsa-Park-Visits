@@ -1,11 +1,14 @@
 <?php
 /**
  * Plugin Name: Dog Park Recommendations
- * Description: Προτείνει την καλύτερη ώρα για επίσκεψη σε πάρκα σκύλων με βάση τον καιρό και τις συνθήκες.
+ * Plugin URI: https://skilitsa.com/dog-park-plugin
+ * Description: Προτείνει την καλύτερη ώρα για επίσκεψη σε πάρκα σκύλων με βάση τον καιρό και τις συνθήκες του πάρκου.
  * Version: 0.01
  * Author: skilitsa.com
+ * Author URI: https://skilitsa.com
  * License: AGPLv3
  * Text Domain: dogpark
+ * Domain Path: /languages
  */
 
 if (!defined('ABSPATH')) {
@@ -26,6 +29,7 @@ require_once DOGPARK_PLUGIN_DIR . 'includes/class-admin.php';
 require_once DOGPARK_PLUGIN_DIR . 'includes/class-scheduler.php';
 require_once DOGPARK_PLUGIN_DIR . 'includes/class-text.php';
 require_once DOGPARK_PLUGIN_DIR . 'includes/class-visitor-form.php';
+require_once DOGPARK_PLUGIN_DIR . 'includes/class-admin-suggestions.php';
 require_once DOGPARK_PLUGIN_DIR . 'blocks/class-block.php';
 
 // Activation/Deactivation hooks
@@ -44,9 +48,8 @@ function dogpark_deactivate() {
 
 // Initialize admin
 DogPark_Admin::init();
+DogPark_Admin_Suggestions::init();
 
-// Initialize visitor form block
-DogPark_Visitor_Form::init();
-
-// Initialize Gutenberg block
+// Initialize Gutenberg blocks
 DogPark_Block::init();
+DogPark_Visitor_Form::init();
