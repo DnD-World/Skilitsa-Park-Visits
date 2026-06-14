@@ -20,14 +20,14 @@ jobs:
           extensions: mbstring, json, xml, curl
           tools: composer:v2
 
-      - name: Install PHP dependencies
+      - name: Install PHP_CodeSniffer and WordPress Coding Standards
         run: |
-          composer install --no-progress --prefer-dist || true
+          composer global require --no-progress "squizlabs/php_codesniffer=*" "wp-coding-standards/wpcs=*"
+          phpcs --config-set installed_paths "$(composer global config home --absolute)/vendor/wp-coding-standards/wpcs"
 
       - name: Run PHP_CodeSniffer (WordPress standards)
         run: |
-          composer global require squizlabs/php_codesniffer wp-coding-standards/wpcs --no-progress
-          phpcs --standard=WordPress includes/ blocks/ dog-park-recommendations.php || true
+          phpcs --standard=WordPress includes/ blocks/ dog-park-recommendations.php --ignore=*/vendor/*
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
